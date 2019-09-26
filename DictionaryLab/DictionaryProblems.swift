@@ -21,8 +21,9 @@ func pairSum(arr: [Int], target: Int) -> (Int, Int) {
     for (key,value) in arr.enumerated(){
         let difference = target - value
         if let test = dict[difference] {
-            return (key, test)
+            return (test, key)
         }
+        dict[value] = key
     }
     return (0,1)
 }
